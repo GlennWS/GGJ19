@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Background
+  - UI
   layers:
   - Default
   - TransparentFX
@@ -44,4 +45,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 3798419945
     locked: 0

@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _playerBody;
     private bool _playerMoving;
     private Vector2 _lastMove;
+    public GameObject UI;
 
     void Start()
     {
@@ -50,6 +51,15 @@ public class PlayerController : MonoBehaviour
         if (Input.GetAxisRaw("Vertical") <= 0.5f && Input.GetAxisRaw("Vertical") >= -0.5f)
         {
             _playerBody.velocity = new Vector2(_playerBody.velocity.x, 0.0f);
+        }
+
+        if (Input.GetKeyDown(KeyCode.I) && UI.activeSelf == false)
+        {
+            UI.SetActive(true);
+        }
+        else if (Input.GetKeyDown(KeyCode.I) && UI.activeSelf == true)
+        {
+            UI.SetActive(false);
         }
     }
 }
