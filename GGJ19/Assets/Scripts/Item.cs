@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Item
 {
+    static Sprite[] sprites = Resources.LoadAll<Sprite>("Sprites/Items/accessory_preview");
+
     public int id;
     public string title;
     public string description;
@@ -16,7 +18,14 @@ public class Item
         this.id = id;
         this.title = title;
         this.description = description;
-        this.icon = Resources.Load<Sprite>("Sprites/Items/" + title);
+        for (int i = 0; i < sprites.Length; i++)
+        {
+            if (sprites[i].name.Equals(title))
+            {
+                icon = sprites[i];
+            }
+        }
+        //this.icon = Resources.Load<Sprite>("Sprites/Items/" + title + ".png");
         this.stats = stats;
     }
 
@@ -25,7 +34,14 @@ public class Item
         this.id = item.id;
         this.title = item.title;
         this.description = item.description;
-        this.icon = Resources.Load<Sprite>("Sprites/Items/" + item.title);
+        for (int i = 0; i < sprites.Length; i++)
+        {
+            if (sprites[i].name.Equals(title))
+            {
+                icon = sprites[i];
+            }
+        }
+        //this.icon = Resources.Load<Sprite>("Sprites/Items/" + item.title + ".png");
         this.stats = item.stats;
     }
 }

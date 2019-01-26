@@ -26,7 +26,8 @@ public class ClickDetection : MonoBehaviour
     {
         if (activation.activeSelf == true && Input.GetKeyDown(KeyCode.T))
         {
-            Debug.Log("wassup yo");
+            Inventory.GiveItem(0);
+            Inventory.GiveItem(1);
         }
     }
 }

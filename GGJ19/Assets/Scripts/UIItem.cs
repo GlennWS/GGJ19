@@ -11,11 +11,12 @@ public class UIItem : MonoBehaviour
     private void Awake()
     {
         spriteImage = GetComponent<Image>();
-        UpdateItem(item);
+        UpdateItem(null);
     }
 
     public void UpdateItem(Item item)
     {
+        this.item = item;
         if (item != null)
         {
             spriteImage.color = Color.white;

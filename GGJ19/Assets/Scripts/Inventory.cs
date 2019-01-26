@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public List<Item> characterItems = new List<Item>();
-    public ItemDatabase itemDatabase;
-    public UIInventory inventoryUI;
+    public static List<Item> characterItems = new List<Item>();
+    public static ItemDatabase itemDatabase;
+    public static UIInventory inventoryUI;
 
     private void Start()
     {
-        GiveItem("Ruby Necklace");
+        itemDatabase = FindObjectOfType<ItemDatabase>();
+        inventoryUI = FindObjectOfType<UIInventory>();
     }
 
-    public void GiveItem(int id)
+    public static void GiveItem(int id)
     {
         Item itemToAdd = itemDatabase.GetItem(id);
         characterItems.Add(itemToAdd);
@@ -21,19 +22,20 @@ public class Inventory : MonoBehaviour
         Debug.Log("Added item: " + itemToAdd.title);
     }
 
-    public void GiveItem(string itemName)
+    public static void GiveItem(string itemName)
     {
         Item itemToAdd = itemDatabase.GetItem(itemName);
         characterItems.Add(itemToAdd);
+        inventoryUI.AddNewItem(itemToAdd);
         Debug.Log("Added item: " + itemToAdd.title);
     }
 
-    public Item CheckForItem(int id)
+    public static Item CheckForItem(int id)
     {
         return characterItems.Find(item => item.id == id);
     }
 
-    public void RemoveItem(int id)
+    public static void RemoveItem(int id)
     {
         Item item = CheckForItem(id);
         if (item != null)

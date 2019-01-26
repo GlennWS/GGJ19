@@ -7,8 +7,8 @@ using UnityEngine.Tilemaps;
 public class ChangeScene : MonoBehaviour
 {
     public GameObject player;
-    public GameObject grid;
     public Camera mainCam;
+    public Canvas canv;
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -16,7 +16,7 @@ public class ChangeScene : MonoBehaviour
         {
             DontDestroyOnLoad(player);
             DontDestroyOnLoad(mainCam);
-            DontDestroyOnLoad(grid);
+            DontDestroyOnLoad(canv);
             Scene sceneToLoad = SceneManager.GetSceneByName("Town");
             SceneManager.LoadScene("Town");
             player.transform.position = new Vector2(7.18f, -3.55f);

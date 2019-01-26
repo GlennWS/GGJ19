@@ -66,6 +66,5 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("horizontalSpeed", _playerBody.velocity.x);
         anim.SetFloat("verticalSpeed", _playerBody.velocity.y);
         anim.SetBool("facingVert", Mathf.Abs(_playerBody.velocity.x) < Mathf.Abs(_playerBody.velocity.y));
-        UI.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
     }
 }
