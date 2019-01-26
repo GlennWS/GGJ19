@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Background
   - UI
+  - Grid
   layers:
   - Default
   - TransparentFX

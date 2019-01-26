@@ -6,6 +6,8 @@
 Assets/Tiles
 Assets/Sprites
 Assets/Animation
+Assets/Prefabs
+Assets/Resources
 Assets/AssetStoreTools*
 
 # Visual Studio cache directory
