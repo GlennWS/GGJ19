@@ -5,6 +5,7 @@
 [Bb]uilds/
 Assets/Tiles
 Assets/Sprites
+Assets/Animation
 Assets/AssetStoreTools*
 
 # Visual Studio cache directory
