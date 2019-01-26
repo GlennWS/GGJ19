@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,14 +16,6 @@ public class PlayerController : MonoBehaviour
     {
         _playerBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.name == "Transition")
-        {
-            SceneManager.LoadScene("Town");
-        }
     }
 
     void Update()
