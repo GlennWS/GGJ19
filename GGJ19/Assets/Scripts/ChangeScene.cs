@@ -13,6 +13,7 @@ public class ChangeScene : MonoBehaviour
     public Canvas canv;
     public Canvas UI;
     public Image cooldown;
+    public Canvas help;
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -24,6 +25,7 @@ public class ChangeScene : MonoBehaviour
             DontDestroyOnLoad(inv);
             DontDestroyOnLoad(UI);
             DontDestroyOnLoad(cooldown);
+            DontDestroyOnLoad(help);
             Scene sceneToLoad = SceneManager.GetSceneByName("Town");
             SceneManager.LoadScene("Town");
             player.transform.position = new Vector2(7.18f, -3.55f);
