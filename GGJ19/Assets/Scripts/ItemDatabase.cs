@@ -28,73 +28,73 @@ public class ItemDatabase : MonoBehaviour
             new Item(0, "Ruby Necklace", "A valuable Ruby necklace!",
             new Dictionary<string, int>
             {
-                {"Value", 100},
+                {"Value", 10},
             }),
 
             new Item(1, "Sapphire Necklace", "A valuable Sapphire necklace!",
             new Dictionary<string, int>
             {
-                {"Value", 200}
+                {"Value", 20}
             }),
 
             new Item(2, "Opal Necklace", "A valuable Opal necklace!",
             new Dictionary<string, int>
             {
-                {"Value", 300}
+                {"Value", 40}
             }),
 
             new Item(3, "Amethyst Necklace", "A valuable Amethyst necklace!",
             new Dictionary<string, int>
             {
-                {"Value", 400}
+                {"Value", 75}
             }),
 
             new Item(4, "Ruby Earring", "A valuable Ruby Earring!",
             new Dictionary<string, int>
             {
-                {"Value", 10}
+                {"Value", 125}
             }),
 
             new Item(5, "Sapphire Earring", "A valuable Sapphire Earring!",
             new Dictionary<string, int>
             {
-                {"Value", 20}
+                {"Value", 150}
             }),
 
             new Item(6, "Opal Earring", "A valuable Opal Earring!",
             new Dictionary<string, int>
             {
-                {"Value", 30}
+                {"Value", 200}
             }),
 
             new Item(7, "Amethyst Earring", "A valuable Amethyst Earring!",
             new Dictionary<string, int>
             {
-                {"Value", 40}
+                {"Value", 250}
             }),
 
             new Item(8, "Ruby Bangle", "A valuable Ruby Bangle!",
             new Dictionary<string, int>
             {
-                {"Value", 5}
+                {"Value", 350}
             }),
 
             new Item(9, "Sapphire Bangle", "A valuable Sapphire Bangle!",
             new Dictionary<string, int>
             {
-                {"Value", 10}
+                {"Value", 450}
             }),
 
             new Item(10, "Opal Bangle", "A valuable Opal Bangle!",
             new Dictionary<string, int>
             {
-                {"Value", 15}
+                {"Value", 600}
             }),
 
             new Item(11, "Amethyst Bangle", "A valuable Amethyst Bangle!",
             new Dictionary<string, int>
             {
-                {"Value", 20}
+                {"Value", 800}
             })
         };
     }

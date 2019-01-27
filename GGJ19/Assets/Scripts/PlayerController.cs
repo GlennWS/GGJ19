@@ -54,15 +54,6 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("facingVert", true);
         }
 
-        if (Input.GetKeyDown(KeyCode.I) && UI.activeSelf == false)
-        {
-            UI.SetActive(true);
-        }
-        else if (Input.GetKeyDown(KeyCode.I) && UI.activeSelf == true)
-        {
-            UI.SetActive(false);
-        }
-
         anim.SetFloat("horizontalSpeed", _playerBody.velocity.x);
         anim.SetFloat("verticalSpeed", _playerBody.velocity.y);
         anim.SetBool("facingVert", Mathf.Abs(_playerBody.velocity.x) < Mathf.Abs(_playerBody.velocity.y));
