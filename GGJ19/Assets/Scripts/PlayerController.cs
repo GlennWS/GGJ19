@@ -54,8 +54,6 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("facingVert", true);
         }
 
-        Debug.Log(Inventory.GetEnergy());
-
         if (Inventory.GetEnergy() <= 0)
         {
             Application.Quit();

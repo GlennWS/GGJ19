@@ -10,6 +10,8 @@ TagManager:
   - Easy
   - Medium
   - Hard
+  - Cooldown
+  - Cooldown Meter
   layers:
   - Default
   - TransparentFX

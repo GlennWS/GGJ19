@@ -6,11 +6,12 @@ using UnityEngine;
 public class ClickDetection : MonoBehaviour
 {
     public GameObject activation;
-    float time = 0;
+    public float time = 0;
     bool playerOn = false;
     AudioSource mainAudio;
     public AudioClip loseEnergy;
     public AudioClip getJewel;
+    public float cooldownTime = 5.0f;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class ClickDetection : MonoBehaviour
         {
             activation.SetActive(true);
             playerOn = true;
+            FindObjectOfType<UpdateUI>().SetClickDetection(this);
         }
     }
 
@@ -32,6 +34,7 @@ public class ClickDetection : MonoBehaviour
         {
             activation.SetActive(false);
             playerOn = false;
+            FindObjectOfType<UpdateUI>().ResetClickDetection();
         }
     }
 
@@ -51,6 +54,11 @@ public class ClickDetection : MonoBehaviour
         }
     };
 
+    public float GetCooldown()
+    {
+        return time;
+    }
+
     enum Challenge { Easy, Medium, Hard };
     Dictionary<Challenge, lootTier> loot = new Dictionary<Challenge, lootTier>() {
         { Challenge.Easy, new lootTier(0, 4, 70, 10) },
@@ -61,11 +69,10 @@ public class ClickDetection : MonoBehaviour
     {
         time += Time.deltaTime;
         
-        if (playerOn && Input.GetKeyDown(KeyCode.T) && time > 2.0f)
+        if (playerOn && Input.GetKeyDown(KeyCode.T) && time > 5.0f)
         {
             time = 0;
             int rand = UnityEngine.Random.Range(0, 101);
-            Debug.Log(rand);
             Challenge c = (Challenge)Enum.Parse(typeof(Challenge), gameObject.tag);
 
             if (rand <= loot[c].chance)
@@ -80,23 +87,6 @@ public class ClickDetection : MonoBehaviour
                 mainAudio.clip = loseEnergy;
                 mainAudio.Play(0);
             }
-
-            //if (gameObject.tag == "Easy" && rand <= 70)
-            //{
-            //    Inventory.GiveItem(UnityEngine.Random.Range(0, 4));
-            //}
-            //else if (gameObject.tag == "Medium" && rand <= 50)
-            //{
-            //    Inventory.GiveItem(UnityEngine.Random.Range(4, 9));
-            //}
-            //else if (gameObject.tag == "Hard" && rand <= 30)
-            //{
-            //    Inventory.GiveItem(UnityEngine.Random.Range(9, 12));
-            //}
-            //else
-            //{
-            //    Inventory.SubtractEnergy(5);
-            //}
         }
     }
 }
