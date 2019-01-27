@@ -54,6 +54,13 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("facingVert", true);
         }
 
+        Debug.Log(Inventory.GetEnergy());
+
+        if (Inventory.GetEnergy() <= 0)
+        {
+            Application.Quit();
+        }
+
         anim.SetFloat("horizontalSpeed", _playerBody.velocity.x);
         anim.SetFloat("verticalSpeed", _playerBody.velocity.y);
         anim.SetBool("facingVert", Mathf.Abs(_playerBody.velocity.x) < Mathf.Abs(_playerBody.velocity.y));
